@@ -157,7 +157,7 @@ export default function AboutPage() {
                 <a href="https://www.instagram.com/shiinnn_" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Instagram className="h-6 w-6" />
                 </a>
-                <a href="mailto:syahranily@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="mailto:praditaaa0701@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Mail className="h-6 w-6" />
                 </a>
                 <a href="https://wa.me/628226284175" className="text-umc-red hover:text-umc-red/80 transition-colors">
