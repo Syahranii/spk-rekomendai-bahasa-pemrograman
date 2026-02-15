@@ -46,32 +46,25 @@ export interface RuleData {
 }
 
 // Tambahkan ini di akhir file types/index.ts
-import { JWT } from "next-auth/jwt";
 import { DefaultSession } from "next-auth";
 
 declare module "next-auth" {
   interface Session {
     user: {
-      id?: string;
-      name?: string;
-      email?: string;
-      role?: string; // Tambahkan role di sini
+      id: string;
+      role?: string;
     } & DefaultSession["user"];
   }
 
   interface User {
-    id?: string;
-    name?: string;
-    email?: string;
-    role?: string; // Tambahkan role di sini
+    id: string;
+    role?: string;
   }
 }
 
 declare module "next-auth/jwt" {
   interface JWT {
-    id?: string;
-    name?: string;
-    email?: string;
-    role?: string; // Tambahkan role di sini
+    id: string;
+    role?: string;
   }
 }
