@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  role      String   @default("user")
+  password  String   @default("umc123")
+  createdAt DateTime @default(now())
+  assessments Assessment[]
+}
+
+model Assessment {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  result    String   // Simpan JSON sebagai string
+  createdAt DateTime @default(now())
+}
+
+model Rule {
+  id        String   @id @default(uuid())
+  criteria  String   // Simpan JSON sebagai string
+  language  String
+  score     Int
+  createdAt DateTime @default(now())
+}
