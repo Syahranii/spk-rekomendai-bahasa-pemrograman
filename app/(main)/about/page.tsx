@@ -90,7 +90,7 @@ export default function AboutPage() {
                   <div className="text-sm text-gray-600">Mahasiswa Terbantu</div>
                 </div>
                 <div className="bg-white rounded-lg p-4 border border-umc-red/20">
-                  <div className="text-3xl font-bold text-umc-red mb-1">5</div>
+                  <div className="text-3xl font-bold text-umc-red mb-1">6</div>
                   <div className="text-sm text-gray-600">Anggota Tim</div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
             <p className="text-gray-600">Mahasiswa Program Studi Teknik Informatika UMC</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Mahasiswa 1: Shindy Zhaski Pradita */}
             <div className="text-center">
               <div className="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg">
@@ -160,13 +160,37 @@ export default function AboutPage() {
                 <a href="mailto:syahranily@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Mail className="h-6 w-6" />
                 </a>
-                <a href="https://wa.me/6281395500969" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="https://wa.me/628226284175" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                  <Phone className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
+
+            {/* Mahasiswa 2: Muhammad Farhan Saino */}
+            <div className="text-center">
+              <div className="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg">
+                <img 
+                  src="/images/farhan.png" 
+                  alt="Muhammad Farhan Saino" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-umc-red mb-2">Muhammad Farhan Saino</h3>
+              <p className="text-gray-600 mb-2">NIM: 220511035</p>
+              <div className="flex justify-center space-x-4">
+                <a href="https://www.instagram.com/mfarhans___" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a href="mailto:farhansaino06@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                  <Mail className="h-6 w-6" />
+                </a>
+                <a href="https://wa.me/6287821563329" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Phone className="h-6 w-6" />
                 </a>
               </div>
             </div>
             
-            {/* Mahasiswa 2: Syahrani */}
+            {/* Mahasiswa 3: Syahrani */}
             <div className="text-center">
               <div className="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg">
                 <img 
@@ -189,34 +213,32 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
-          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Mahasiswa 3: Nazwa Alyssa Fauzia */}
+            {/* Mahasiswa 4: Serly Nefriady Chaniago */}
             <div className="text-center">
               <div className="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg">
                 <img 
-                  src="/images/nazwa.png" 
-                  alt="Nazwa Alyssa Fauzia" 
+                  src="/images/serly.png" 
+                  alt="Serly Nefriady Chaniago" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-umc-red mb-2">Nazwa Alyssa Fauzia</h3>
-              <p className="text-gray-600 mb-2">NIM: 230511043</p>
+              <h3 className="text-xl font-bold text-umc-red mb-2">Serly Nefriady Chaniago</h3>
+              <p className="text-gray-600 mb-2">NIM: 220511092</p>
               <div className="flex justify-center space-x-4">
-                <a href="https://www.instagram.com/nzwa__v" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="https://www.instagram.com/itssrly_ss19" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Instagram className="h-6 w-6" />
                 </a>
-                <a href="mailto:nazwaalyssa18@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="mailto:serlynefriady21@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Mail className="h-6 w-6" />
                 </a>
-                <a href="https://wa.me/62895608830272" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="https://wa.me/6283895626870" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Phone className="h-6 w-6" />
                 </a>
               </div>
             </div>
             
-            {/* Mahasiswa 4: Siti Maefaulan */}
+            {/* Mahasiswa 5: Siti Maefaulan */}
             <div className="text-center">
               <div className="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg">
                 <img 
@@ -239,26 +261,26 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
-            
-            {/* Mahasiswa 5: Muhammad Farhan Saino */}
+
+            {/* Mahasiswa 6: Nazwa Alyssa Fauzia */}
             <div className="text-center">
               <div className="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg">
                 <img 
-                  src="/images/farhan.png" 
-                  alt="Muhammad Farhan Saino" 
+                  src="/images/nazwa.png" 
+                  alt="Nazwa Alyssa Fauzia" 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-umc-red mb-2">Muhammad Farhan Saino</h3>
-              <p className="text-gray-600 mb-2">NIM: 220511035</p>
+              <h3 className="text-xl font-bold text-umc-red mb-2">Nazwa Alyssa Fauzia</h3>
+              <p className="text-gray-600 mb-2">NIM: 230511043</p>
               <div className="flex justify-center space-x-4">
-                <a href="https://www.instagram.com/mfarhans___" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="https://www.instagram.com/nzwa__v" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Instagram className="h-6 w-6" />
                 </a>
-                <a href="mailto:farhansaino06@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="mailto:nazwaalyssa18@gmail.com" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Mail className="h-6 w-6" />
                 </a>
-                <a href="https://wa.me/6287821563329" className="text-umc-red hover:text-umc-red/80 transition-colors">
+                <a href="https://wa.me/62895608830272" className="text-umc-red hover:text-umc-red/80 transition-colors">
                   <Phone className="h-6 w-6" />
                 </a>
               </div>
