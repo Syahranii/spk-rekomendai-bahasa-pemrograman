@@ -45,15 +45,18 @@ export interface RuleData {
   score: number;
 }
 
-// Tambahkan ini di akhir file types/index.ts
+/* ================================
+   NEXT AUTH TYPE AUGMENTATION FIX
+   ================================ */
+
 import { DefaultSession } from "next-auth";
 
 declare module "next-auth" {
   interface Session {
-    user: {
+    user: DefaultSession["user"] & {
       id: string;
       role?: string;
-    } & DefaultSession["user"];
+    };
   }
 
   interface User {
