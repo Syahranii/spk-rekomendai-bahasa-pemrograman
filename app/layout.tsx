@@ -5,7 +5,7 @@ import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const meta: Metadata = {
+export const metadata: Metadata = {
   title: "Sistem Pakar Rekomendasi Bahasa Pemrograman - UMC",
   description: "Sistem pakar untuk membantu pemula memilih bahasa pemrograman yang tepat",
 };
