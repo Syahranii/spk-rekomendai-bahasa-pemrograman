@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Sistem Pakar Rekomendasi Bahasa Pemrograman - UMC",
   description: "Sistem pakar untuk membantu pemula memilih bahasa pemrograman yang tepat",
+  icons: {
+    icon: "/umc-logo.png",
+  },
 };
 
 export default function RootLayout({
