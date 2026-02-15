@@ -46,19 +46,11 @@ export interface RuleData {
 }
 
 /* ================================
-   NEXT AUTH TYPE AUGMENTATION FIX
-   ================================ */
-
-import { DefaultSession } from "next-auth";
+   NEXT AUTH TYPE AUGMENTATION
+   (SAFE VERSION - NO SESSION OVERRIDE)
+================================ */
 
 declare module "next-auth" {
-  interface Session {
-    user: DefaultSession["user"] & {
-      id: string;
-      role?: string;
-    };
-  }
-
   interface User {
     id: string;
     role?: string;
