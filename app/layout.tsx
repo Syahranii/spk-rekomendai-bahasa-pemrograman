@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sistem Pakar Rekomendasi Bahasa Pemrograman - UMC",
-  description: "Sistem pakar untuk membantu pemula memilih bahasa pemrograman yang tepat",
+  description:
+    "Sistem pakar untuk membantu pemula memilih bahasa pemrograman yang tepat",
   icons: {
     icon: "/umc-logo.png",
   },
@@ -15,14 +16,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          
+          <main className="min-h-screen w-full px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-7xl">
+              {children}
+            </div>
+          </main>
+
         </ThemeProvider>
       </body>
     </html>

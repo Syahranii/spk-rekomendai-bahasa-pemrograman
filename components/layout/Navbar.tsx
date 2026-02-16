@@ -1,16 +1,16 @@
-// D:\Semester Tujuh\SPK\components\layout\Navbar.tsx
-
 'use client'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LogOut, Home, ClipboardList, Clock, Info } from 'lucide-react'
+import { LogOut, Home, ClipboardList, Clock, Info, Menu, X } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Navbar() {
   const pathname = usePathname()
-  const { data: session, status } = useSession() // ✅ FIXED
+  const { data: session, status } = useSession()
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   const navItems = [
     { href: '/dashboard', label: 'Dashboard', icon: <Home className="w-5 h-5" /> },
@@ -21,36 +21,31 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/dashboard" className="flex items-center space-x-2">
-              <Image 
-                src="/umc-logo.png" 
-                alt="Logo UMC" 
-                width={40} 
-                height={40} 
-                className="mr-2"
-              />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-umc-red dark:text-white">
-                  Expert System
-                </span>
-                <span className="text-xs text-gray-500">
-                  Website Sistem Pakar Hasil Karya Kel 1 TI22B
-                </span>
-              </div>
-            </Link>
-          </div>
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
 
-          <div className="flex items-center space-x-8">
+          {/* LOGO */}
+          <Link href="/dashboard" className="flex items-center space-x-2">
+            <Image
+              src="/umc-logo.png"
+              alt="Logo UMC"
+              width={40}
+              height={40}
+            />
+            <span className="font-bold text-lg text-umc-red dark:text-white">
+              Expert System
+            </span>
+          </Link>
+
+          {/* DESKTOP MENU */}
+          <div className="hidden lg:flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium ${
                   pathname === item.href
-                    ? 'bg-umc-red/10 text-umc-red dark:bg-umc-red/20 dark:text-white'
+                    ? 'bg-umc-red/10 text-umc-red'
                     : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
                 }`}
               >
@@ -60,29 +55,67 @@ export default function Navbar() {
             ))}
 
             {status === 'authenticated' ? (
-              <div className="flex items-center space-x-4">
-                <span className="text-sm text-gray-700 dark:text-gray-300">
-                  {session?.user?.email}
-                </span>
-                <button
-                  onClick={() => signOut()}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-                >
-                  <LogOut className="w-5 h-5" />
-                  <span>Logout</span>
-                </button>
-              </div>
+              <button
+                onClick={() => signOut()}
+                className="flex items-center space-x-2 px-3 py-2 text-sm"
+              >
+                <LogOut className="w-5 h-5" />
+                <span>Logout</span>
+              </button>
             ) : (
               <Link
                 href="/login"
-                className="px-4 py-2 bg-umc-red text-white rounded-md hover:bg-umc-red/90 transition-colors"
+                className="px-4 py-2 bg-umc-red text-white rounded-md"
               >
                 Login
               </Link>
             )}
           </div>
+
+          {/* MOBILE BUTTON */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
         </div>
       </div>
+
+      {/* MOBILE MENU */}
+      {mobileOpen && (
+        <div className="lg:hidden px-4 pb-4 space-y-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </Link>
+          ))}
+
+          {status === 'authenticated' ? (
+            <button
+              onClick={() => signOut()}
+              className="flex items-center space-x-2 px-3 py-2 text-sm"
+            >
+              <LogOut className="w-5 h-5" />
+              <span>Logout</span>
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="block px-4 py-2 bg-umc-red text-white rounded-md"
+            >
+              Login
+            </Link>
+          )}
+        </div>
+      )}
     </nav>
   )
 }

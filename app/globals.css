@@ -186,3 +186,46 @@
 .hover\:bg-umc-red\/90:hover {
   background-color: rgba(211, 47, 47, 0.9);
 }
+
+/* =========================
+   GLOBAL RESPONSIVE FIXES
+========================= */
+
+/* Prevent horizontal scroll di semua device */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Semua image & media auto responsive */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile tap lebih smooth */
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* Text wrapping supaya tidak keluar layar */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Smooth scrolling modern feel */
+html {
+  scroll-behavior: smooth;
+}

@@ -10,7 +10,7 @@ export default function DashboardPage() {
       {/* Tidak ada header sama sekali di sini */}
       
       {/* Main Banner - Hanya Foto Kampus */}
-      <section className="relative h-[500px]">
+      <section className="relative min-h-[60vh] lg:min-h-[500px]">
         <div className="absolute inset-0">
           <img 
             src="/university-building.jpg" 
@@ -20,15 +20,15 @@ export default function DashboardPage() {
           
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
             <div className="text-white text-center px-4">
-              <h1 className="text-5xl font-bold mb-4">Selamat Datang di Sistem Pakar!</h1>
-              <p className="text-2xl mb-8">Rekomendasi Bahasa Pemrograman untuk Pemula</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Selamat Datang di Sistem Pakar!</h1>
+              <p className="text-lg sm:text-xl lg:text-2xl mb-8">Rekomendasi Bahasa Pemrograman untuk Pemula</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <main className="container mx-auto px-4 py-12">
+      <main className="py-10 sm:py-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Apa yang Bisa Anda Lakukan?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -36,7 +36,7 @@ export default function DashboardPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {/* Card 1 - Icon Otak */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all">
             <div className="h-48 bg-umc-red flex items-center justify-center">
@@ -91,7 +91,7 @@ export default function DashboardPage() {
 
         {/* About Section - Background Putih */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
-          <div className="flex flex-col md:flex-row items-center">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Apa itu Sistem Pakar?</h2>
               <p className="text-gray-600 mb-4">
@@ -130,7 +130,7 @@ export default function DashboardPage() {
       {/* Footer - MERAH dengan TEKS PUTIH */}
       <footer className="bg-umc-red text-white py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 justify-between items-center text-center lg:text-left">
             <div className="flex items-center mb-4 md:mb-0">
               <Image 
                 src="/umc-logo.png" 
